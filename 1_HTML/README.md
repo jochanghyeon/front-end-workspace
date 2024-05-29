@@ -6,9 +6,9 @@
 - 사용자가 사용하는 브라우저는 정해져 있지 않으며
   브라우저마다 화면이 다르게 출력이 될 수 있으니
   브라우저마다 테스트를 하면서 수정
-   => 크로스 브라우징
+  => 크로스 브라우징
 
-   ## 웹페이지 개발 방법
+  ## 웹페이지 개발 방법
 
 - 구조(Structure) : HTML
 - 표현(Presentation) : CSS
@@ -23,12 +23,12 @@
 - 확장자는 .HTML 또는 .HTM
 - 처음 보여지는 화면의 파일 이름은"index.html"
 
-## main page, sub page 
+## main page, sub page
 
 - main page : index.html
 - sub page : index.html 제외 파일명.html 파일들
 
-## 태그 
+## 태그
 
 ```
 <태그명 속성="값"></태그명>
@@ -51,22 +51,23 @@
 2. 여래 개의 속성을 사용할 수 있다.
 
 ```html
-<img src="/" width="100">
+<img src="/" width="100" />
 ```
 
 3. 하나의 속성에는 값을 한개만 지정 가능하다.
 
 ```html
-<img src="/" width="100,200">
-<!-- 작성 불가 --> <!-- 로 사용하면 나만보임-->
+<img src="/" width="100,200" />
+<!-- 작성 불가 -->
+<!-- 로 사용하면 나만보임-->
 ```
 
 4. 속성값은 원래의 이름이 한글인 경우가 아니면 사용 불가능하다.
 
 ```html
-<img src="/" width="삼백">
+<img src="/" width="삼백" />
 <!-- 작성불가 -->
-<meta name="keywords" content="= 영화, 한국영화, 외국영화">
+<meta name="keywords" content="= 영화, 한국영화, 외국영화" />
 <!-- 예외적인 경우 -->
 ```
 
@@ -75,8 +76,8 @@
 ```html
 <!DOCTYPE html>
 <html>
-     <head></head>
-     <body></body>
+  <head></head>
+  <body></body>
 </html>
 ```
 
@@ -93,13 +94,17 @@
 ## meta 태그
 
 ```html
-<meta charset="UTF-8"> <!-- 문자 세트 지정 -->
-<meta name="viewport" content="width=device-width,initial-scale=1.0"><!--모바일 기기 -->
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta charset="UTF-8" />
+<!-- 문자 세트 지정 -->
+<meta
+  name="viewport"
+  content="width=device-width,initial-scale=1.0"
+/><!--모바일 기기 -->
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <!-- 인터넷 익스플로저 브라우저 -->
 
 <!-- 검색 엔진 -->
-<meta name="keyword" content="키워드1, 키워드2">
-<meta name="description" content="문서 설명">
-<meta name="author" content="문서 작성자">
+<meta name="keyword" content="키워드1, 키워드2" />
+<meta name="description" content="문서 설명" />
+<meta name="author" content="문서 작성자" />
 ```
