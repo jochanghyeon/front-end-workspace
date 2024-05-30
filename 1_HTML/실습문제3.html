@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>주문하기</h1>
+    <form action="">
+      <label for="name">고객명</label>
+      <input type="name" name="name" id="name" /><br /><br />
+      <label for="tel">전화번호</label>
+      <input type="tel" name="tel" id="tel" /><br /><br />
+      <label for="email">E-mail</label>
+      <input type="email" id="email" /><br /><br />
+
+      <fieldset>
+        <legend>피자 사이즈</legend>
+        <label><input type="radio" name="size" value="Small"/>Small<br></label><br>
+        <label><input type="radio" name="size" value="Medium"/>Medium <br></label><br>
+        <label><input type="radio" name="size" value="Large"/>Large <br/label><br>
+        </fieldset>
+      <fieldset>
+        <legend>토핑 선택</legend>
+        <label><input type="checkbox" name="topping" value="bacon">베이컨</label>
+        <label><input type="checkbox" name="topping" value="cheese">치즈</label>
+        <label><input type="checkbox" name="tooping" value="onion">양파
+        </label>
+        <label><input type="checkbox" name="tooping" value="mushroom">버섯</label>
+        
+      </fieldset>
+      <br>
+
+      희망 배송 시간 <input type="time" name="time">
+      <br>
+      <br>
+      배송 시 요청사항: <textarea name="memo" id=""placeholder="내용을 입력해주세요"></textarea>
+      <button type="submit">주문하기</button>
+
+      
+    </form>
+  </body>
+</html>
