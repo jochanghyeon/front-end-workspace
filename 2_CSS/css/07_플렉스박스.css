@@ -1,11 +1,50 @@
 .container {
   background-color: lightgray;
   height: 100vh;
+  /*1. flex */
+  display: flex;
+  /* 2. flex-direction */
+  flex-direction: column;
+  flex-direction: row;
+  /* 3. flex-wrap */
+  flex-wrap: wrap-reverse;
+  flex-wrap: nowrap;
+
+  /* 4. justify-content */
+  justify-content: center;
+  justify-content: space-between;
+  justify-content: flex-start;
+  /* 5. align-items */
+  align-items: flex-end;
+  align-items: center;
+  align-items: stretch;
+
+  /* 6. align-content */
+  align-content: space-around;
 }
 .item {
   background-color: white;
   border: 3px solid black;
   padding: 1rem;
+  flex-basis: auto;
+  flex: 1;
+} /* flex-basis: 크기*/
+.item:nth-child(1) {
+  /*flex-grow: 1;*/
+  align-self: flex-start;
+}
+.item:nth-child(2) {
+  /*flex-grow: 2;*/
+  align-self: center;
+}
+.item:nth-child(3) {
+  /*flex-grow: 1;*/
+  align-self: flex-end;
+  order: 1;
+}
+.item:nth-child(4) {
+  /*flex-grow: 4;*/
+  order: 2;
 }
 .item img {
   width: 95px;

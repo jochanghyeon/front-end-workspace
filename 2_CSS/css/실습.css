@@ -1,0 +1,81 @@
+header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-weight: bolder;
+}
+
+#section1 {
+  background-color: red;
+  color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#section2 {
+  background-color: purple;
+  color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#section3 {
+  background-color: yellow;
+  color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.border {
+}
+
+#fixed {
+  position: fixed;
+  top: 80%;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 30px;
+}
+#Heading1 {
+  font-size: 50px;
+  font-weight: 900;
+}
+#Heading2 {
+  font-size: 50px;
+  font-weight: 900;
+}
+#Heading3 {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+#lorem {
+  font-size: 35px;
+  text-align: center;
+}
+#loge {
+  display: flex;
+  align-self: flex-start;
+}
+nav {
+  display: flex;
+  align-self: flex-end;
+}
+#logo {
+  font-size: 50px;
+}
