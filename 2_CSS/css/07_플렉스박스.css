@@ -1,0 +1,13 @@
+.container {
+  background-color: lightgray;
+  height: 100vh;
+}
+.item {
+  background-color: white;
+  border: 3px solid black;
+  padding: 1rem;
+}
+.item img {
+  width: 95px;
+  height: 95px;
+}
