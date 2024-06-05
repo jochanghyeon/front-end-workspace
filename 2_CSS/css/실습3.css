@@ -1,0 +1,46 @@
+header {
+  background-image: url(../../resources/background.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo {
+  color: white;
+  font-size: 3rem;
+  text-decoration: underline;
+}
+#orange {
+  width: 900px;
+  height: 500;
+  padding-left: 300px;
+}
+header nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  align-items: center;
+}
+
+#lorem {
+  font-size: 3rem;
+  width: 50%;
+}
+#ipusm {
+  text-align: justify;
+  padding-left: 300px;
+  font-size: 1rem;
+}
+section {
+  padding-left: 300px;
+}
+nav a {
+  color: white;
+}

@@ -1,0 +1,21 @@
+.header {
+  background-image: url(../../resources/background.jpg);
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: color;
+  background-position: center;
+  color: white;
+  height: 100%;
+  width: 300px;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.header nav {
+  color: white;
+  font-size: 2rem;
+}

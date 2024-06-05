@@ -1,0 +1,53 @@
+.header {
+  position: fixed;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-image: url(../../resources/background.jpg);
+  /*background-blend-mode: color; 백그라운드이미지랑,백그라운드칼라랑 같이 사용할수있게됨*/
+  background-blend-mode: color;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.header a {
+  color: white;
+  display: block;
+  font-size: 1.5rem;
+  margin: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.header h2 {
+  font-size: 5rem;
+  border-bottom: 2px solid white;
+  padding-bottom: 15px;
+  margin-top: 30px;
+}
+.content {
+  padding: 20px 20px 20px 320px;
+  padding-left: 320px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.content h1 {
+  font-size: 3rem;
+}
+.content img {
+  width: 100%;
+  align-self: center;
+  margin: 20px;
+  /*이미지 크기조절할때 이미지가 지정한값만큼 바뀜*/
+  max-width: 500px;
+}
+.conten p {
+  line-height: 1.5;
+}
+.header nav {
+  margin-bottom: 100px;
+}

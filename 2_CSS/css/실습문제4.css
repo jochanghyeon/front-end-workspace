@@ -1,0 +1,33 @@
+body {
+  background: linear-gradient(45deg, black, blue);
+  height: 100vh;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25%;
+}
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  margin: 1px;
+  width: 3px;
+  height: 30px;
+  border: 1px solid;
+  animation: boxani;
+}
+@keyframes boxAni {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(1000px, 0);
+  }
+  100% {
+    transform: translate(1000px, 400px);
+  }
+}
