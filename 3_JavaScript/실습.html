@@ -21,9 +21,9 @@
            예) 킬로그램 : 60  
      -->
     <script>
-      let kg = 60;
-      let lb = 2.2;
-      console.log(lb * kg);
+      const kg = 60;
+      const lb = kg * 2.2;
+      console.log(lb);
     </script>
 
     <!--
@@ -32,8 +32,9 @@
            예) 제곱미터 : 99
     -->
     <script>
-      let m2 = 99;
-      console.log(m2 * 0.3);
+      const m2 = 99;
+      const py = m2 * 0.3;
+      console.log(py);
     </script>
 
     <!-- 
@@ -42,10 +43,11 @@
            예) 윗변 : 10, 밑변 : 14, 높이 : 4
      -->
     <script>
-      let topp = 10;
-      let row = 14;
-      let hi = 4;
-      (console.log(topp + row) / 2) * 4;
+      const topp = 10;
+      const row = 14;
+      const hi = 4;
+      const trape = ((topp + row) / 2) * hi;
+      console.log(trape);
     </script>
 
     <!-- 
@@ -54,18 +56,18 @@
            - 예) 정기 예금액 : 12,000,000
     -->
     <script>
-      let bank = 120000000;
-      let month = 0.04 / 12;
-      console.log(bank * month);
+      const bank = 12000000;
+      const month = (bank * 0.04) / 12;
+      console.log(month);
     </script>
 
     <!-- 
         Q5. 머쓱이는 55살인 선생님이 몇 년도에 태어났는지 궁금해졌다. 나이 age가 주어질 때, 2024년을 기준 출생 연도를 console에 출력하시오.
      -->
     <script>
-      let age = 55;
-      let year = 2024;
-      console.log(year - age);
+      const age = 55;
+      const year = 2024 - age;
+      console.log(year);
     </script>
 
     <!-- 
@@ -73,10 +75,14 @@
             머쓱이가 가지고 있는 돈이 15,000원 일 때, 머쓱이가 최대로 마실 수 있는 아메리카노의 잔 수와 남는 돈을 console에 출력하시오.
      -->
     <script>
-      let ice = 5500;
-      let money = 15000;
-      console.log(money / ice);
-      console.log(ice % money);
+      const ice = 5500;
+      const money = 15000;
+      const cups = parseInt(money / ice);
+
+      const change = money % ice;
+      console.log(
+        `최대로 마실 수 있는 아메리카노 잔 수는 ${cups}잔 남은 돈은${change}원`
+      );
     </script>
 
     <!-- 
@@ -84,11 +90,12 @@
           양꼬치 64인분과 음료수 6개를 먹었다면 총얼마를 지불해야 하는지 console에 출력하시오.
      -->
     <script>
-      let yy = 12000;
-      let drink = 2000;
-      console.log(yy * 64);
-      console.log(drink * 6);
-      console.log(yy * 64);
+      const lamb = 64;
+      const drink = 6;
+      const service = parseInt(lamb / 10);
+      console.log(service);
+      const total = lamb * 12000 + (drink - service) * 2000;
+      console.log(total);
     </script>
   </body>
 </html>

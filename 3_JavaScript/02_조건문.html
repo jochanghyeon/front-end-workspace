@@ -40,7 +40,7 @@
     }
 -->
     <script>
-      age = 6;
+      age = 31;
       if (age > 19) {
         console.log("성인");
       } else if (age > 13) {
@@ -50,6 +50,45 @@
         console.log("어린이");
       } else {
         console.log("유아");
+      }
+    </script>
+
+    <!--
+      switch(데이터) {
+       case 조건A :
+          조건 A가 true 
+          break ;
+        case 조건 B :
+          조건 B가 true
+          break ;
+        default : 
+          모든 조건이 false
+      }
+      -->
+    <script>
+      const number = prompt("숫자를 입력하세요");
+      console.log("70번째 줄 >>" + number);
+      //number 값이 짝수이면 짝수(number % 2===0),
+      //홀수이면 홀수 (number % 2 === 1) 출력!
+      // 그 외에는 숫자가 아닙니다 라고 출력!
+      // if 문
+      if (number % 2 === 0) {
+        console.log("짝수");
+      } else if (number % 2 === 1) console.log("홀수");
+      else {
+        console.log("숫자가 아닙니다");
+      }
+
+      // switch 문
+      switch (number % 2) {
+        case 0:
+          console.log("짝수");
+          break;
+        case 1:
+          console.log("홀수");
+          break;
+        default:
+          console.log("숫자가 아닙니다");
       }
     </script>
   </body>
