@@ -1,3 +1,24 @@
-fieldset {
-  display: block;
+#userIdspan {
+  color: gray;
+}
+#userPwdspan {
+  color: gray;
+}
+form {
+  border: 1px solid gray;
+  padding: 10px;
+}
+form span {
+  margin-left: 12px;
+}
+
+#userPwdCheckspan {
+  color: #999;
+}
+
+#userNamespan {
+  color: #999;
+}
+#usereMailspan {
+  color: #999;
 }

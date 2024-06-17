@@ -102,3 +102,5 @@ email.addEventListener("input", function (e) {
 // 이메일 형식에 맞춰서 입력하시오.
 // abc123!@gmail.com
 // -> (영어나숫자여러문자상관없이 길이도 상관없이 : +)@(앞이랑 마찬가지)
+
+const userName = document.querySelector();
