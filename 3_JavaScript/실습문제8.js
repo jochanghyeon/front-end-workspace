@@ -71,39 +71,3 @@ usereMail.addEventListener("input", function () {
     usereMailspan.innerHTML = "No!";
   }
 });
-
-userName.addEventListener("input", function () {
-  const regExp = /^[가-힣]{2,}$/;
-  const check = regExp.test(userName.value);
-  if (check) userNamespan.styl;
-});
-
-const userName13 = document.querySelector("#userName13");
-const userName13span = document.querySelector("#userName13span");
-userName.addEventListener("input", function () {
-  const regExp = /^[a-zA-z]$/;
-  const check = regExp.test(userName.value);
-
-  if (check) {
-    userNamespan.style.color = "green";
-    userNamespan.innerHTML = "안녀앟세여";
-  } else {
-    userNamespan.style.color = "red";
-    userNamespan.innerHTML = "하이";
-  }
-});
-
-const joCa = document.querySelector("#joCa");
-const joCaspan = document.querySelector("#joCaspan");
-
-joCaspan.addEventListener("input", function () {
-  const regExp = /^[c-z0-9]{2-5}$/;
-  const check = regExp.test(joCaspan.value);
-  if (cehck) {
-    joCaspan.style.color = "green";
-    joCaspan.innerHTML = "헉";
-  } else {
-    joCaspan.style.color = "blue";
-    joCaspan.innerHTML = "킹받;";
-  }
-});
