@@ -1,16 +1,16 @@
 #id1 {
-  background-color: skyblue;
+  background: skyblue;
 }
 .class1 {
-  background-color: yellowgreen;
+  background: yellowgreen;
   color: red;
 }
 div {
-  background-color: teal !important;
+  background: teal !important;
   color: white !important;
   width: 200px;
   height: 200px;
 }
 div {
-  background-color: pink;
+  background: pink;
 }

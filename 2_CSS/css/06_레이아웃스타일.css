@@ -11,21 +11,22 @@
 .space {
   width: 100px;
   height: 100px;
-  background-color: skyblue;
-  box-sizing: border-box;
+  background-color: beige;
+  /* box-sizing: border-box; */
   margin: 10px;
 }
 #padding1 {
   padding: 10px;
 }
 #padding2 {
-  /* padding-top (상), botton (하), left(좌), right(우) */
+  /* padding-top (상), bottom (하), left (좌), right (우) */
   padding-top: 50px;
   padding-right: 100px;
 
   /* 상/하 : 50px, 좌/우 : 30px */
   padding: 50px 30px;
-  /*상 : 30px, 우 : 50px, 하 : 20px, 좌 : 40px*/
+
+  /* 상 : 30px, 우 : 50px, 하 : 20px, 좌 : 40px */
   padding: 30px 50px 20px 40px;
 }
 #margin1 {
@@ -36,7 +37,7 @@
   margin: 50px 30px;
   margin: 30px 50px 20px 40px;
 }
-/* border : width, style, color */
+/* border : width style color */
 .border {
   width: 100px;
   height: 100px;
@@ -45,26 +46,27 @@
   box-sizing: border-box;
 }
 #border1 {
-  /* dotted : 테두리를 점선으로 표시 */
+  /*dotted : 테두리를 점선으로 표시 */
   border-style: dotted;
 }
 #border2 {
-  /* dashed : 테두리를 짧은 선으로 표시 */
+  /* dashed : 테두리를 짧은 선으로 표시*/
   border-style: dashed;
   border-color: hotpink;
-  border-color: hotpink yellow green blue;
-  border-right-color: brown;
+  border-color: hotpink yellow;
+  border-right-color: blueviolet;
 }
 #border3 {
   /* double : 테두리를 이중선으로 표시 */
   border-style: double;
-  /* border-radius  : 테두리의 모서리를 둥글게 지정하는 속성*/
+  /* border-radius : 테두리의 모서리를 둥글게 지정하는 속성 */
   border-radius: 5px;
   border-radius: 50px;
   border-radius: 50%;
-  /* top-left, top-right, bottom-left, bottom-right*/
+  /* top-left, top-right, bottom-left, bottom-right */
   border-bottom-right-radius: 30px;
 }
+
 .display {
   width: 150px;
   height: 50px;
@@ -74,11 +76,9 @@
 .display-inline {
   display: inline;
 }
-
 .display-block {
   display: block;
 }
-
 .display-inline-block {
   display: inline-block;
 }
@@ -98,7 +98,6 @@
   position: relative;
   width: 300px;
   height: 300px;
-
   background-color: yellow;
 }
 #first {
@@ -117,15 +116,15 @@
   height: 100px;
   background-color: orange;
 }
+
 #fixed {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   width: 100px;
   height: 100px;
   background-color: skyblue;
 }
-
 .visibility {
   width: 100px;
   height: 100px;
@@ -133,11 +132,10 @@
 }
 #vis1 {
   /*
-    visibility : hidden / display : none
-    ->둘 다 화면에서 보여지지 않는건 같지만
-    display: none; 는 영역 조차 없어진다.
+        visibility: hidden / display : none
+        -> 둘 다 화면에서 보여지지 않는 건 같지만
+           display: none; 은 영역 조차 없어진다.
     */
-
   /* visibility: hidden; */
   display: none;
   background-color: beige;
@@ -166,9 +164,9 @@
   background-color: blueviolet;
   top: 50px;
   left: 50px;
-  z-index: 111;
+  z-index: 9999;
 }
 #z-index3 {
   background-color: green;
-  z-index: -2;
+  z-index: -1;
 }

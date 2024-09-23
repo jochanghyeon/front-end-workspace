@@ -1,11 +1,11 @@
 # 제이쿼리(jQuery)
 
-- "적게 쓰고 더 많이" 라는 슬로건을 가진 자바스크립트 라이브러리
+- "적게 쓰고 더 많이"라는 슬로건을 가진 자바스크립트 라이브러리
 - Ajax 호출 및 DOM 조작과 같은 자바스크립트의 복잡한 작업을 간단히 처리
 
 ## 제이쿼리 적용
 
-- CDN (Content Delivery Network)을 통해 제이쿼리를 적용
+- CDN(Content Delivery Network)을 통해 제이쿼리를 적용
 
 ```html
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

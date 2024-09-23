@@ -1,73 +1,96 @@
+/*
+    사용자가 입력을 했을 때 
+    해당 조건이 틀릴 경우 빨간색으로 표시
+               맞는 경우 초록색 표시와 함께 OK!
+*/
 const userId = document.querySelector("#userId");
-const userIdspan = document.querySelector("#userIdspan");
-
-userId.addEventListener("input", function () {
-  const regExp = /^[a-zA-Z][a-zA-Z0-9]{4,12}$/;
-  const check = regExp.test(userId.value);
-  if (check) {
-    userIdspan.style.color = "green";
-    userIdspan.innerHTML = "OK!";
-  } else {
-    userIdspan.style.color = "red";
-    userIdspan.innerHTML =
-      "첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4~12자로 입력하시오.";
-  }
-});
+const userIdSpan = document.querySelector("#userIdSpan");
 const userPwd = document.querySelector("#userPwd");
-const userPwdspan = document.querySelector("#userPwdspan");
-
-userPwd.addEventListener("input", function () {
-  const regExp = /^[!-~]{4,12}$/;
-  const check = regExp.test(userPwd.value);
-  if (check) {
-    userPwdspan.style.color = "green";
-    userPwdspan.innerHTML = "OK!";
-  } else {
-    userPwdspan.style.color = "red";
-    userPwdspan.innerHTML =
-      "첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4~12자로 입력하시오.";
-  }
-});
-
+const userPwdSpan = document.querySelector("#userPwdSpan");
 const userPwdCheck = document.querySelector("#userPwdCheck");
-const userPwdCheckspan = document.querySelector("#userPwdCheckspan");
+const userPwdCheckSpan = document.querySelector("#userPwdCheckSpan");
+const userName = document.querySelector("#userName");
+const userNameSpan = document.querySelector("#userNameSpan");
+const email = document.querySelector("#email");
+const emailSpan = document.querySelector("#emailSpan");
 
-userPwdCheck.addEventListener("input", function () {
-  console.log(userPwdCheckspan);
-  if (userPwd.value === userPwdCheck.value) {
-    userPwdCheckspan.style.color = "green";
-    userPwdCheckspan.innerHTML = "일치";
+userId.addEventListener("input", function (e) {
+  // 첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4~12자로 입력하시오.
+  const regExp = /^[a-zA-Z][a-zA-Z0-9]{3,11}$/;
+  const check = regExp.test(userId.value);
+
+  if (check) {
+    userIdSpan.style.color = "green";
+    userIdSpan.innerHTML = "OK!";
+    //e.target.nextElementSibling.style.color = "green";
+    //e.target.nextElementSibling.innerHTML = "OK!";
   } else {
-    userPwdCheckspan.style.color = "red";
-    userPwdCheckspan.innerHTML = "일치하지 않습니다";
+    userIdSpan.style.color = "red";
+    userIdSpan.innerHTML =
+      "첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4~12자로 입력하시오.";
+    // e.target.nextElementSibling.style.color = "red";
+    // e.target.nextElementSibling.innerHTML =
+    //  "첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4~12자로 입력하시오.";
   }
 });
-const userName = document.querySelector("#userName");
-const userNamespan = document.querySelector("#userNamespan");
 
-userName.addEventListener("input", function () {
+// 영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하시오.
+// [!-~]{여기는 여러분들이 채워주세요!}
+userPwd.addEventListener("input", function (e) {
+  const regExp = /^[!-~]{8,15}$/;
+  const check = regExp.test(userPwd.value);
+
+  if (check) {
+    userPwdSpan.style.color = "green";
+    userPwdSpan.innerHTML = "OK!";
+  } else {
+    userPwdSpan.style.color = "red";
+    userPwdSpan.innerHTML =
+      "영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하시오.";
+  }
+});
+
+// 위의 비밀번호와 일치하게 입력하시오.
+// 정규표현식 필요 X, 위에 입력한 비밀번호 값이랑 비교!
+// userPwd.value === userPwdCheck.value
+userPwdCheck.addEventListener("input", function (e) {
+  if (userPwd.value === userPwdCheck.value) {
+    userPwdCheckSpan.style.color = "green";
+    userPwdCheckSpan.innerHTML = "OK!";
+  } else {
+    userPwdCheckSpan.style.color = "red";
+    userPwdCheckSpan.innerHTML = "위의 비밀번호와 일치하게 입력하시오.";
+  }
+});
+
+// 한글로만 이루어져야되며 2글자 이상으로 입력하시오.
+// [가-힣]{여기도 여러분들이 채워주세요!}
+userName.addEventListener("input", function (e) {
   const regExp = /^[가-힣]{2,}$/;
   const check = regExp.test(userName.value);
+
   if (check) {
-    userNamespan.style.color = "green";
-    userNamespan.innerHTML = "OK!";
+    userNameSpan.style.color = "green";
+    userNameSpan.innerHTML = "OK!";
   } else {
-    userNamespan.style.color = "red";
-    userNamespan.innerHTML = "No!";
+    userNameSpan.style.color = "red";
+    userNameSpan.innerHTML =
+      "한글로만 이루어져야되며 2글자 이상으로 입력하시오.";
   }
 });
-const usereMail = document.querySelector("#usereMail");
-const usereMailspan = document.querySelector("#usereMailspan");
 
-usereMail.addEventListener("input", function () {
+// 이메일 형식에 맞춰서 입력하시오.
+// abc123!@gmail.com
+// -> (영어나숫자여러문자상관없이 길이도 상관없이 : +)@(앞이랑 마찬가지)
+email.addEventListener("input", function (e) {
   const regExp = /^[!-~]+@[!-~]+$/;
-  const check = regExp.test(usereMail.value);
+  const check = regExp.test(email.value);
 
   if (check) {
-    usereMailspan.style.color = "green";
-    usereMailspan.innerHTML = "OK!";
+    emailSpan.style.color = "green";
+    emailSpan.innerHTML = "OK!";
   } else {
-    usereMailspan.style.color = "red";
-    usereMailspan.innerHTML = "No!";
+    emailSpan.style.color = "red";
+    emailSpan.innerHTML = "이메일 형식에 맞춰서 입력하시오.";
   }
 });

@@ -1,33 +1,40 @@
 body {
   background: linear-gradient(45deg, black, blue);
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25%;
 }
 .square {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  color: black;
-  margin: 1px;
-  width: 3px;
-  height: 30px;
-  border: 1px solid;
-  animation: boxani;
+  width: 10px;
+  height: 50px;
+  background: white;
+  margin: 3px;
+  border-radius: 10px;
+  animation: squareScale 1s linear infinite;
 }
-@keyframes boxAni {
+.square:nth-child(2),
+.square:nth-child(6) {
+  animation-delay: 0.1s;
+}
+.square:nth-child(3),
+.square:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.square:nth-child(4) {
+  animation-delay: 0.3s;
+}
+@keyframes squareScale {
   0% {
-    transform: translate(0, 0);
+    transform: scaleY(1);
   }
   50% {
-    transform: translate(1000px, 0);
+    transform: scaleY(1.8);
   }
   100% {
-    transform: translate(1000px, 400px);
+    transform: scaleY(1);
   }
 }

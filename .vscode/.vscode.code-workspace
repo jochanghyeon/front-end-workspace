@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../1_HTML"
+		},
+		{
+			"path": "../2_CSS"
+		},
+		{
+			"path": "../3_JavaScript"
+		},
+		{
+			"path": "../4_jQuery"
+		},
+		{
+			"path": "../project"
+		},
+		{
+			"path": "../resources"
+		},
+		{
+			"path": "../youtube"
+		},
+		{
+			"path": "../새 폴더"
+		}
+	]
+}

@@ -6,8 +6,6 @@
     <title>테이블 태그</title>
   </head>
   <body>
-    <!-- 테이블 -->
-    <!-- border 테이블 뒤에 사용해야함-->
     <h1>기본적인 표 만들기</h1>
     <table border="1">
       <tr>
@@ -22,15 +20,15 @@
       </tr>
       <tr>
         <td>Safari</td>
-        <td>APPLE</td>
+        <td>Apple</td>
         <td>http://apple.com</td>
       </tr>
     </table>
 
     <h2>표의 행과 열을 합치는 속성</h2>
-    <!-- rowspan 아래칸으로 표를합칭-->
-    <!-- colspan 옆칸으로 표를 합침-->
+
     <table border="1">
+      <!--(tr>td*3)*4-->
       <tr>
         <td rowspan="2" width="80" height="80">사진</td>
         <td>이름</td>
@@ -50,8 +48,6 @@
       </tr>
     </table>
 
-    <!-- caption : 테이블의 명칭-->
-    <!-- th : 진한글씨 -->
     <h2>테이블 내에 구조 나누기</h2>
     <table border="1">
       <caption>
@@ -78,12 +74,12 @@
         <tr>
           <td>세로</td>
           <td>4</td>
-          <td>광진구</td>
+          <td>서울 광진구</td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
-          <th colspan="2">총 마리수</th>
+          <th colspan="2">총 마리 수</th>
           <td>3</td>
         </tr>
       </tfoot>

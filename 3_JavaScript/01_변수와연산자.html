@@ -4,61 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!--script>
+    <!--<script>
       console.log(222);
       alert(333);
-    </!--script-->
-    <script src="script.js"></script>
+    </script>
+    <script src="script.js"></script> -->
   </head>
   <body>
     <h1>변수</h1>
     <p>어떠한 값을 저장하는 공간</p>
     <!-- var, const, let -->
     <script>
-      //in not defined Error 오타!!!!!
-
-      // var <- 옛날 방식 - 거의 사용 X
+      // 옛날 방식 - 거의 사용 X
       var varA = 100; // var 변수명 = 값;
-      console.log(varA); // 100 출력값
+      console.log(varA); // 100
       varA = "zzz";
-      console.log(varA); //zzz 출력값
+      console.log(varA); // zzz
 
-      // 상수 - 값을 수정할 수 없다. (자주사용험)
-      const constB = 200; //const 변수명 = 값;
-      console.log(constB); //200 출력값
-      //constB = 300; //Uncaught Type Error 에러가뜸 출력값을 못바꿈
+      // 상수 - 값을 수정할 수 없다 (자주)
+      const constB = 200; // const 변수명 = 값;
+      console.log(constB); // 200
+      // constB = 300; // Uncaught TypeError
 
-      // 변수 - 값을 수정할 수 있다. (가끔사용함)
-      let letC = 300; //let 변수명 = 값;
-      console.log(letC); // 300 출력값
+      // 변수 - 값을 수정할 수 있다 (가끔)
+      let letC = 300; // let 변수명 = 값;
+      console.log(letC); // 300
       letC = "xxx";
-      console.log(letC); // xxx 출력값
+      console.log(letC); // xxx
 
       // typeof : 데이터 타입 확인
-      console.log(typeof constB); //number 출력값
-      console.log(typeof letC); //string 출력값
+      console.log(typeof constB); // number
+      console.log(typeof letC); // string
     </script>
 
-    <!--기본 데이터 타입-->
+    <!-- 기본 데이터 타입 -->
     <!-- 문자열(string) -->
     <script>
       let message = '"안녕"이라고 말해보세요~';
-      message = '"안녕"이라고 말해보세요~';
+      // message = "\"안녕\"이라고 말해보세요~";
       console.log(message);
-      console.log(message[8]); // 한글자씩 가져옴
-      console.log(message.length); //글자수가 나옴
+      console.log(message[8]); // 말
+      console.log(message.length); // 14 - 글자수
 
-      console.log("누군가에게", message); //누군가에게 "안녕"이라고 말해보세요~
-      console.log("누군가에게 " + message); // +앞에 띄어쓰기를 해야됨
+      console.log("누군가에게", message);
+      console.log("누군가에게 " + message);
       console.log(`누군가에게 ${message}`);
 
       const name = "서동문";
       const age = 3;
       // 안녕? 내 이름은 서동문이고, 나이는 3살!
-
-      console.log("안녕 ? 내 이름은", name, "이고,나이는", age, "살!");
-      console.log("안녕? 내 이름은 " + name + "이고,나이는 " + age + "살!");
-      console.log(`안녕? 내 이름은 ${name}이고, 나이는 ${age}살!`); // 이걸 많이씀
+      console.log("안녕? 내 이름은", name, "이고, 나이는", age, "살!");
+      console.log("안녕? 내 이름은 " + name + "이고, 나이는 " + age + "살!");
+      console.log(`안녕? 내 이름은 ${name}이고, 나이는 ${age}살!`);
     </script>
 
     <!-- 숫자 -->
@@ -69,75 +66,73 @@
       console.log(num1 - num2); // 7
       console.log(num1 * num2); // 30
       console.log(num1 / num2); // 3.3333..
-      console.log(num1 % num2); // 나머지 :1 (10을3으로나누고 남은숫자)
-      console.log(num1 ** num2); // 1000 (제곱을 뜻함10의3승 )
+      console.log(num1 % num2); // 나머지 : 1
+      console.log(num1 ** num2); // 제곱 : 10^3 = 1000
 
       // 문자열 -> 숫자 : Number()
       console.log(typeof "100"); // string
-      console.log(typeof Number("100")); //number
-      console.log(Number("Hello")); // NaN( Not a Number)
+      console.log(typeof Number("100")); // number
+      console.log(Number("Hello")); // NaN (Not a Number)
 
       // 숫자 -> 문자열 : String()
-      console.log(typeof String(200)); //string
+      console.log(typeof String(200)); // string
 
-      // 실수 -> 정수 : parseInt()(소수점 제외 시키고싶을때)
-      console.log(parseInt(1.8)); //1
+      // 실수 -> 정수 (소수점 제외) : parseInt()
+      console.log(parseInt(1.8)); // 1
     </script>
 
-    <!--undefined, null -->
+    <!-- undefined, null -->
     <script>
       let test;
-      console.log(test); //undefined - 정의되지 않음
+      console.log(test); // undefined - 정의되지 않음
 
       test = null;
-      console.log(test); //null -아무것도 없음
+      console.log(test); // null - 아무것도 없음
     </script>
 
     <!-- Boolean과 비교 연산자 -->
     <script>
       console.log(true);
       console.log(false);
+
       let num3 = 100;
       let num4 = 200;
-      console.log(num3 < num4); //true
-      console.log(num3 >= num4); //false
+      console.log(num3 < num4); // true
+      console.log(num3 >= num4); // false
 
       num4 = 100;
       num4 = "100";
-      //num4 를 100으로 바꿈
-      console.log(num3 == num4); //true
-      console.log(num3 != num4); //false
+      console.log(num3 == num4); // true
+      console.log(num3 != num4); // false
 
       // 데이터 타입까지 체크
-      console.log(num3 === num4); //true ->false
-      console.log(num3 !== num4); //false -> true
-      // ! 부정
+      console.log(num3 === num4); // true -> false
+      console.log(num3 !== num4); // false -> true
 
       // 다른 데이터 타입 -> Boolean : Boolean()
-      // false : 0, NaN, "비어있는 문자", null ,undefined
+      // false : 0, NaN, "", null, undefined
       // 나머지는 true
       console.log(Boolean(0)); // false
       console.log(Boolean(1)); // true
-      console.log(Boolean("안녕"));
     </script>
 
-    <!--논리 연산자 -->
+    <!-- 논리 연산자 -->
     <script>
       const a = 100;
       const b = 200;
 
-      // && : 그리고(and) - 하나라도 false면 false!!!
-      console.log(a < 200 && a == 100); //true && true = true
-      //(둘다 일치하는 경우에만)
-      console.log(a > 200 && a == 100); //false && true = false
+      // && : 그리고(and) - 하나라도 false면 false!
+      console.log(a < 200 && a == 100); // true && true = true
+      console.log(a > 200 && a == 100); // false && true = false
+
+      // || : 또는(or) - 하나라도 true면 true!
       console.log(a > 200 || a == 100); // false || true = true
-      // || : 또는 (or) (시프트+엔터위에) 하나라도 true면 true!!!
       console.log(a > 200 || a != 100); // false || false = false
 
-      //! : 아니다(not)
-      console.log(!true); //flase
-      console.log(!false); //true
-      console.log(!!(a > b)); //flase
+      // ! : 아니다(not)
+      console.log(!true); // false
+      console.log(!false); // true
+      console.log(!!(a > b)); // false
     </script>
   </body>
 </html>
