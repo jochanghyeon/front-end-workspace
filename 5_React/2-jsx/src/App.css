@@ -1,0 +1,22 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+button {
+  background-color: #61dafb;
+  color: black;
+  width: 500px;
+  height: 200px;
+}
+button:hover {
+  color: blueviolet;
+}
+.qweqq {
+  background-color: blue;
+  margin: auto 20% auto 20%;
+}
+.eeee {
+  font-size: 8rem;
+  width: 100%;
+  background-color: brown;
+}

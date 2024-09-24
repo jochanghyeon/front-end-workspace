@@ -18,12 +18,12 @@
     <!-- JSX (Javascript Syntax eXtension) -->
     <div id="root"></div>
     <script type="text/babel">
-      let count = 0;
-      const setCount = () => {
+      count = 0;
+      setCount = () => {
         count++;
         ReactDOM.render(<Container />, root);
       };
-      const Container = () => {
+      Container = () => {
         return (
           <div>
             <h1>Total Clicks : {count}</h1>
@@ -32,6 +32,8 @@
         );
       };
       ReactDOM.render(<Container />, root);
+
+      export default { count, setCount, Container };
     </script>
   </body>
 </html>
