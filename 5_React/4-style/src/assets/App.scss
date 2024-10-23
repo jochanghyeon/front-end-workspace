@@ -1,0 +1,29 @@
+/* 변수 지정하는것이 좋음 */
+$bg-color: coral;
+$color: white;
+$padding: 20px;
+
+/* 믹스인  -> @include*/
+@mixin text-center {
+  text-align: center;
+}
+
+/* 상속 -> @extend */
+.border {
+  border: 10px solid wheat;
+}
+.scss-style {
+  @include text-center;
+  @extend .border;
+  background-color: $bg-color;
+  color: $color;
+  padding: $padding;
+
+  /* 중첩 (태그안에 태그)*/
+  h1 {
+    color: black;
+    &:hover {
+      color: wheat;
+    }
+  }
+}

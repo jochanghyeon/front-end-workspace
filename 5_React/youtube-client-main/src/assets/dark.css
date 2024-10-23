@@ -1,0 +1,14 @@
+body.dark {
+  background-color: black;
+  color: white;
+}
+body.dark header,
+body.dark nav {
+  background-color: black;
+  color: white;
+}
+body.dark svg,
+body.dark span,
+body.dark p {
+  color: white;
+}/*# sourceMappingURL=dark.css.map */
