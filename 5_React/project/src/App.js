@@ -12,11 +12,17 @@ import Machine from "./machine";
 import Weather from "./weather"; // Weather 컴포넌트 추가
 import useMain from "./main.js";
 import "./weather.css";
+import Calendar from "./calender.js";
+import "./calender.css";
+import Calendersmall from "./calendersmall.js";
 
 const App = () => {
   const [isMemoOpen, setMemoOpen] = useState(false);
   const [isMachineOpen, setMachineOpen] = useState(false);
   const [isWeatherOpen, setWeatherOpen] = useState(false);
+  const [isCalendarOpen, setCalendarOpen] = useState(false);
+  const [memoText, setMemoText] = useState(""); // 메모 텍스트 상태 추가
+
   const [dragging, setDragging] = useState(false);
   const [currentModal, setCurrentModal] = useState(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -24,12 +30,14 @@ const App = () => {
   const memoModalRef = useRef(null);
   const machineModalRef = useRef(null);
   const weatherModalRef = useRef(null);
+  const calendarModalRef = useRef(null);
 
   const { startResize } = useMain(memoModalRef);
 
   const toggleMemo = () => setMemoOpen((prev) => !prev);
   const toggleMachine = () => setMachineOpen((prev) => !prev);
   const toggleWeather = () => setWeatherOpen((prev) => !prev);
+  const toggleCalendar = () => setCalendarOpen((prev) => !prev);
 
   // 드래그 시작
   const handleMouseDown = (e, ref) => {
@@ -65,53 +73,57 @@ const App = () => {
         >
           {isMemoOpen && (
             <div
-              className="modal"
+              className="floating-window"
               ref={memoModalRef}
               style={{
                 position: "absolute",
-                width: "400px",
-                height: "300px",
                 left: "100px",
                 top: "100px",
               }}
             >
-              <div className="floating-window">
-                <div
-                  className="resizer nw"
-                  onMouseDown={(e) => startResize(e, e.target)}
-                ></div>
-                <div
-                  className="resizer ne"
-                  onMouseDown={(e) => startResize(e, e.target)}
-                ></div>
-                <div
-                  className="resizer sw"
-                  onMouseDown={(e) => startResize(e, e.target)}
-                ></div>
-                <div
-                  className="resizer se"
-                  onMouseDown={(e) => startResize(e, e.target)}
-                ></div>
-                <div
-                  className="window-header"
-                  onMouseDown={(e) => handleMouseDown(e, memoModalRef)}
-                >
-                  <div className="window-title">메모장</div>
-                  <div className="window-controls">
-                    <button
-                      className="window-close"
-                      onClick={toggleMemo}
-                    ></button>
-                  </div>
-                </div>
-                <div className="modal_body">
-                  <textarea
-                    id="memoInput"
-                    name="memo"
-                    placeholder="안녕~"
-                  ></textarea>
+              <div
+                className="resizer nw"
+                onMouseDown={(e) => startResize(e, e.target)}
+              ></div>
+              <div
+                className="resizer ne"
+                onMouseDown={(e) => startResize(e, e.target)}
+              ></div>
+              <div
+                className="resizer sw"
+                onMouseDown={(e) => startResize(e, e.target)}
+              ></div>
+              <div
+                className="resizer se"
+                onMouseDown={(e) => startResize(e, e.target)}
+              ></div>
+              <div
+                className="window-header"
+                onMouseDown={(e) => handleMouseDown(e, memoModalRef)}
+              >
+                <div className="window-title">메모장</div>
+                <div className="window-controls">
+                  <button
+                    className="window-close"
+                    onClick={toggleMemo}
+                  ></button>
                 </div>
               </div>
+              <textarea
+                placeholder="안녕~"
+                value={memoText}
+                onChange={(e) => setMemoText(e.target.value)}
+                style={{
+                  width: "100%",
+                  height: "calc(100% - 30px)", // 헤더 높이를 고려한 동적 높이
+                  border: "1px solid #ccc", // 보더 유지
+                  outline: "none", // 아웃라인 유지
+                  padding: "5px",
+                  boxSizing: "border-box",
+                  resize: "none", // 사용자가 크기를 조정할 수 없도록
+                  overflowY: "auto", // 세로 스크롤바가 필요할 때 나타나도록
+                }}
+              ></textarea>
             </div>
           )}
 
@@ -121,8 +133,6 @@ const App = () => {
               ref={machineModalRef}
               style={{
                 position: "absolute",
-                width: "400px",
-                height: "400px",
                 left: "150px",
                 top: "150px",
               }}
@@ -130,7 +140,7 @@ const App = () => {
               <div className="modal_body2">
                 <div
                   className="mheader"
-                  onMouseDown={(e) => handleMouseDown(e, machineModalRef)} // 드래그 핸들러 추가
+                  onMouseDown={(e) => handleMouseDown(e, machineModalRef)}
                 >
                   <button
                     className="window-close2"
@@ -143,11 +153,30 @@ const App = () => {
           )}
 
           {isWeatherOpen && (
-            <Weather
-              modalVisible={isWeatherOpen}
-              handleCloseModal={toggleWeather}
+            <div
+              className="modal3"
               ref={weatherModalRef}
-              onMouseDown={(e) => handleMouseDown(e, weatherModalRef)} // 드래그 핸들러 추가
+              style={{
+                position: "absolute",
+                width: "400px",
+                height: "400px",
+                left: "200px",
+                top: "200px",
+              }}
+            >
+              <Weather
+                modalVisible={isWeatherOpen}
+                handleCloseModal={toggleWeather}
+              />
+            </div>
+          )}
+
+          {isCalendarOpen && (
+            <Calendar
+              modalVisible={isCalendarOpen}
+              handleCloseModal={toggleCalendar}
+              ref={calendarModalRef}
+              onMouseDown={(e) => handleMouseDown(e, calendarModalRef)}
             />
           )}
         </div>
@@ -173,7 +202,7 @@ const App = () => {
               </button>
             </div>
             <div className="icon">
-              <button className="btn-open-modal">
+              <button className="btn-open-modal" onClick={toggleCalendar}>
                 <img src={calendarIcon} alt="캘린더" />
               </button>
             </div>

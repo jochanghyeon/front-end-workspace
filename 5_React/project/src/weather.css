@@ -1,20 +1,16 @@
-.modal3 {
+/* .modal3 {
   display: flex;
-  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 300px;
   height: 100%;
-  z-index: 1000;
-  background-color: rgba(0, 0, 0, 0);
-  justify-content: center;
-  align-items: center;
-}
+  border: 1px solid black;
+} */
 .modal-content {
   position: absolute;
   padding: 20px;
   border: 1px solid none;
-  width: auto;
+  width: 350px;
   height: 360px;
   font-size: large;
   color: rgb(255, 255, 255);
@@ -26,7 +22,6 @@
 }
 .weather-info {
   position: relative;
-  z-index: 10;
   text-align: center;
   margin-top: 10px;
   background-size: cover;
