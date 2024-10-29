@@ -4,7 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
-import "./calender.css";
+import "./calendar.css";
 
 const Calendar = () => {
   const [events, setEvents] = useState([]); // 이벤트 목록 관리
@@ -76,9 +76,9 @@ const Calendar = () => {
   };
 
   return (
-    <div className="calendermain">
+    <div className="calendarmain">
       {/* 사이드 메뉴 */}
-      <div className="calenderside">
+      <div className="calendarside">
         <div className="sideheader">
           <button className="window-close3"></button>
         </div>
@@ -95,11 +95,11 @@ const Calendar = () => {
             조창현
           </button>
         </div>
-        <div className="smallcalender"></div>
+        <div className="smallcalendar"></div>
       </div>
 
       {/* FullCalendar 본체 */}
-      <div className="calender-div">
+      <div className="calendar-div">
         <div className="calheader">
           <button
             onClick={() => handleViewChange("dayGridMonth")}

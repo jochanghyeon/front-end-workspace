@@ -127,7 +127,7 @@
 .fc .fc-day-sat:nth-last-child(1) {
   border-bottom-right-radius: 15px;
 }
-.calendermain {
+.calendarmain {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -137,7 +137,7 @@
   border: none;
 }
 
-.calenderside {
+.calendarside {
   display: block;
   width: 230px;
   height: 630px;
@@ -177,7 +177,7 @@
   background-color: rgb(41, 219, 71);
   color: white;
 }
-.smallcalender {
+.smallcalendar {
   border-top: 2px solid #dddddd;
   background-color: #e6e6e6;
   width: 100%;
@@ -219,7 +219,7 @@
 .headerbutton:focus {
   background-color: #d8d8d8;
 }
-.calender-div {
+.calendar-div {
   background-color: white;
   width: 1000px;
   height: 300px;

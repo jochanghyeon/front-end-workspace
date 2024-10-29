@@ -12,9 +12,9 @@ import Machine from "./machine";
 import Weather from "./weather"; // Weather 컴포넌트 추가
 import useMain from "./main.js";
 import "./weather.css";
-import Calendar from "./calender.js";
-import "./calender.css";
-import Calendersmall from "./calendersmall.js";
+import Calendar from "./calendar.js";
+import "./calendar.css";
+import calendarsmall from "./calendarsmall.js";
 
 const App = () => {
   const [isMemoOpen, setMemoOpen] = useState(false);
