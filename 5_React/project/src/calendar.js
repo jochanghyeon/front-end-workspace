@@ -6,7 +6,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import "./calendar.css";
 
-const Calendar = () => {
+const Calendar = ({ handleCloseModal }) => {
   const [events, setEvents] = useState([]); // 이벤트 목록 관리
   const [selectedColor, setSelectedColor] = useState("#3788d8"); // 기본 이벤트 색상
   const calendarRef = useRef(null); // FullCalendar 인스턴스 접근
@@ -80,11 +80,14 @@ const Calendar = () => {
       {/* 사이드 메뉴 */}
       <div className="calendarside">
         <div className="sideheader">
-          <button className="window-close3"></button>
+          <button className="window-close3" onClick={handleCloseModal}></button>
         </div>
         <div className="sidetext">
-          <p>iCoulds</p>
-          <button onClick={() => handleChangeEventColor("#EE5F5B")}>
+          <p>iClouds</p>
+          <button
+            onClick={() => handleChangeEventColor("rgb(96, 96, 248)")}
+            id="wnwnsdud"
+          >
             주준영
           </button>
           <br />
@@ -101,6 +104,9 @@ const Calendar = () => {
       {/* FullCalendar 본체 */}
       <div className="calendar-div">
         <div className="calheader">
+          <div className="calheaderplus">
+            <button className="calendarplus">+</button>
+          </div>
           <button
             onClick={() => handleViewChange("dayGridMonth")}
             className="headerbutton"

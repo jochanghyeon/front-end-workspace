@@ -14,7 +14,6 @@ import useMain from "./main.js";
 import "./weather.css";
 import Calendar from "./calendar.js";
 import "./calendar.css";
-import calendarsmall from "./calendarsmall.js";
 
 const App = () => {
   const [isMemoOpen, setMemoOpen] = useState(false);
@@ -30,7 +29,7 @@ const App = () => {
   const memoModalRef = useRef(null);
   const machineModalRef = useRef(null);
   const weatherModalRef = useRef(null);
-  const calendarModalRef = useRef(null);
+  const calendarModalRef = useRef(null); // 캘린더 모달 ref 추가
 
   const { startResize } = useMain(memoModalRef);
 
@@ -63,6 +62,42 @@ const App = () => {
     setCurrentModal(null);
   };
 
+  const indexDownCalendar = () => {
+    calendarModalRef.current.style.zIndex = 1000;
+    if (memoModalRef.current !== null) memoModalRef.current.style.zIndex = 1;
+    if (machineModalRef.current !== null)
+      machineModalRef.current.style.zIndex = 1;
+    if (weatherModalRef.current !== null)
+      weatherModalRef.current.style.zIndex = 1;
+  };
+
+  const indexDownMemo = () => {
+    memoModalRef.current.style.zIndex = 1000;
+    if (calendarModalRef.current !== null)
+      calendarModalRef.current.style.zIndex = 1;
+    if (machineModalRef.current !== null)
+      machineModalRef.current.style.zIndex = 1;
+    if (weatherModalRef.current !== null)
+      weatherModalRef.current.style.zIndex = 1;
+  };
+
+  const indexDownWeather = () => {
+    weatherModalRef.current.style.zIndex = 1000;
+    if (calendarModalRef.current !== null)
+      calendarModalRef.current.style.zIndex = 1;
+    if (machineModalRef.current !== null)
+      machineModalRef.current.style.zIndex = 1;
+    if (memoModalRef.current !== null) memoModalRef.current.style.zIndex = 1;
+  };
+  const indexDownMachine = () => {
+    machineModalRef.current.style.zIndex = 1000;
+    if (calendarModalRef.current !== null)
+      calendarModalRef.current.style.zIndex = 1;
+    if (weatherModalRef.current !== null)
+      weatherModalRef.current.style.zIndex = 1;
+    if (memoModalRef.current !== null) memoModalRef.current.style.zIndex = 1;
+  };
+
   return (
     <>
       <div id="root">
@@ -75,11 +110,8 @@ const App = () => {
             <div
               className="floating-window"
               ref={memoModalRef}
-              style={{
-                position: "absolute",
-                left: "100px",
-                top: "100px",
-              }}
+              style={{ position: "absolute", left: "100px", top: "100px" }}
+              onClick={() => indexDownMemo}
             >
               <div
                 className="resizer nw"
@@ -115,13 +147,13 @@ const App = () => {
                 onChange={(e) => setMemoText(e.target.value)}
                 style={{
                   width: "100%",
-                  height: "calc(100% - 30px)", // 헤더 높이를 고려한 동적 높이
-                  border: "1px solid #ccc", // 보더 유지
-                  outline: "none", // 아웃라인 유지
+                  height: "calc(100% - 30px)",
+                  border: "1px solid #ccc",
+                  outline: "none",
                   padding: "5px",
                   boxSizing: "border-box",
-                  resize: "none", // 사용자가 크기를 조정할 수 없도록
-                  overflowY: "auto", // 세로 스크롤바가 필요할 때 나타나도록
+                  resize: "none",
+                  overflowY: "auto",
                 }}
               ></textarea>
             </div>
@@ -131,17 +163,14 @@ const App = () => {
             <div
               className="modal2"
               ref={machineModalRef}
-              style={{
-                position: "absolute",
-                left: "150px",
-                top: "150px",
-              }}
+              style={{ position: "absolute", left: "150px", top: "150px" }}
+              onClick={indexDownMachine}
             >
-              <div className="modal_body2">
-                <div
-                  className="mheader"
-                  onMouseDown={(e) => handleMouseDown(e, machineModalRef)}
-                >
+              <div
+                className="modal_body2"
+                onMouseDown={(e) => handleMouseDown(e, machineModalRef)}
+              >
+                <div className="mheader">
                   <button
                     className="window-close2"
                     onClick={toggleMachine}
@@ -163,6 +192,7 @@ const App = () => {
                 left: "200px",
                 top: "200px",
               }}
+              onClick={indexDownWeather}
             >
               <Weather
                 modalVisible={isWeatherOpen}
@@ -172,12 +202,17 @@ const App = () => {
           )}
 
           {isCalendarOpen && (
-            <Calendar
-              modalVisible={isCalendarOpen}
-              handleCloseModal={toggleCalendar}
+            <div
+              className="calendarmain"
               ref={calendarModalRef}
               onMouseDown={(e) => handleMouseDown(e, calendarModalRef)}
-            />
+              onClick={indexDownCalendar}
+            >
+              <Calendar
+                modalVisible={isCalendarOpen}
+                handleCloseModal={toggleCalendar}
+              />
+            </div>
           )}
         </div>
 

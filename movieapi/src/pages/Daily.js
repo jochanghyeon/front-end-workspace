@@ -22,7 +22,6 @@ const Daily = () => {
   useEffect(() => {
     dailyAPI(date);
   }, [date]);
-  
 
   const [moviebox, setMoviebox] = useState({
     rank: "",
@@ -49,6 +48,7 @@ const Daily = () => {
           </tr>
         </thead>
         <tbody>
+          {moviebox}
           {setMoviebox.rank}
           {setMoviebox.movieNm}
           {setMoviebox.openDt}
