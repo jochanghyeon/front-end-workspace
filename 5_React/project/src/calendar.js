@@ -6,6 +6,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import { IoIosCheckboxOutline } from "react-icons/io"; // 아이콘 추가
 import "./calendar.css";
+import MyCalendar from "./calendarsmall.js";
 
 const Calendar = ({ handleCloseModal }) => {
   const [events, setEvents] = useState([]); // 이벤트 목록 관리
@@ -173,7 +174,9 @@ const Calendar = ({ handleCloseModal }) => {
           </div>
           <br />
         </div>
-        <div className="smallcalendar"></div>
+        <div className="smallcalendar">
+          <MyCalendar />
+        </div>
       </div>
 
       {/* FullCalendar 본체 */}

@@ -17,6 +17,9 @@
 .fc-scrollgrid-sync-inner {
   font-size: 1rem;
 }
+.smallcalendar {
+  border-bottom-left-radius: 15px;
+}
 /* .fc .fc-button-primary:disabled {
     width: 100px;
     height: 40px;
@@ -173,23 +176,6 @@
   border-radius: 5px;
 }
 
-#wnwnsdud {
-  background-color: rgb(96, 96, 248);
-  color: white;
-}
-#wnwnsdud:focus {
-  background-color: rgb(0, 0, 255);
-  color: white;
-}
-#whckdgus {
-  background-color: #29db47;
-  color: white;
-}
-
-#whckdgus:focus {
-  background-color: #00ff2a;
-  color: white;
-}
 .smallcalendar {
   border-top: 2px solid #dddddd;
   background-color: #e6e6e6;
@@ -270,7 +256,6 @@ s .window-close3:hover {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 99999;
 }
 
 .modal-content4 {
