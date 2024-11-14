@@ -3,8 +3,6 @@ import { getDaily } from "../api/movie";
 import { StyledDiv } from "../components/StyledDiv";
 import Header from "../components/Header";
 
-// 2번 문제 -----------------------------------------------------------------------
-
 const Daily = () => {
   const yesterday = (date) => {
     const year = date.getFullYear();
@@ -14,20 +12,21 @@ const Daily = () => {
   };
 
   const [date, setDate] = useState(yesterday(new Date()));
+  const [moviebox, setMoviebox] = useState([]); // 배열로 초기화
 
   const dailyAPI = async (date) => {
-    const response = await getDaily(date.replace(/-/g, ""));
+    try {
+      const response = await getDaily(date.replace(/-/g, ""));
+      // 응답 데이터에서 영화 정보를 추출하여 상태에 저장
+      setMoviebox(response.data.boxOfficeResult.dailyBoxOfficeList);
+    } catch (error) {
+      console.error("Error fetching daily box office data:", error);
+    }
   };
 
   useEffect(() => {
     dailyAPI(date);
   }, [date]);
-
-  const [moviebox, setMoviebox] = useState({
-    rank: "",
-    movieNm: "",
-    openDt: "",
-  });
 
   return (
     <StyledDiv>
@@ -45,16 +44,28 @@ const Daily = () => {
             <th>순위</th>
             <th>영화제목</th>
             <th>개봉날짜</th>
+            <th>누적관객수</th>
+            <th>매출</th>
+            <th>랭킹</th>
+            <th>스시</th>
           </tr>
         </thead>
         <tbody>
-          {moviebox}
-          {setMoviebox.rank}
-          {setMoviebox.movieNm}
-          {setMoviebox.openDt}
+          {moviebox.map((movie) => (
+            <tr key={movie.rank}>
+              <td>{movie.rank}</td>
+              <td>{movie.movieNm}</td>
+              <td>{movie.openDt}</td>
+              <td>{movie.audiAcc}</td>
+              <td>{movie.salesAcc}</td>
+              <td>{movie.rankInten}</td>
+              <td>{movie.scrnCnt}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </StyledDiv>
   );
 };
+
 export default Daily;

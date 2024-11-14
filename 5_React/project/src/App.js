@@ -14,7 +14,6 @@ import useMain from "./main.js";
 import "./weather.css";
 import Calendar from "./calendar.js";
 import "./calendar.css";
-import MyCalendar from "./calendarsmall.js";
 
 const App = () => {
   const [isMemoOpen, setMemoOpen] = useState(false);

@@ -12,10 +12,9 @@ const Home = () => {
 
   const moviesAPI = async () => {
     const result = await getMovies();
+    console.log(result);
     setMovies(result.data);
   };
-
-
 
   const onDelete = async (id) => {
     await delMovie(id);
@@ -25,6 +24,10 @@ const Home = () => {
   const onDetail = (id) => {
     navigate("/" + id);
   };
+
+  useEffect(() => {
+    moviesAPI();
+  }, []);
 
   return (
     <StyledDiv>
